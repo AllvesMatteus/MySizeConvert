@@ -1,0 +1,223 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    font-family: 'News Cycle', 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    margin-bottom: 0px;
+}
+
+.news-cycle-regular {
+    font-family: "News Cycle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.news-cycle-bold {
+    font-family: "News Cycle", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+    position: relative;
+    /* Adicionado */
+}
+
+form {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group>div {
+    flex: 1 0 calc(50% - 10px);
+    /* divide em duas colunas com espaço entre elas */
+    margin-right: 10px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: right;
+    text-transform: uppercase;
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    /* inclui padding e borda no cálculo do tamanho */
+}
+
+option {
+    background-color: #2e2e2e;
+    color: #ffffff;
+}
+
+.title {
+    font-size: 27px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #eee;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo_img {
+    margin-bottom: 5%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.github {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #E32934;
+}
+
+button {
+    color: #eee;
+    padding: 0em 3em;
+    background: none;
+    border-radius: 8px;
+    border: 1px solid #E32934;
+    letter-spacing: 0.20em;
+    line-height: 4em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+    text-shadow: rgba(0, 0, 0, 0.3) 0.1em 0.1em 0.2em;
+}
+
+button:hover {
+    background: #E32934;
+    color: #eee;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: News Cycle;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/cf-fonts/s/news-cycle/5.0.18/latin/400/normal.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: News Cycle;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/cf-fonts/s/news-cycle/5.0.18/latin-ext/400/normal.woff2);
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: News Cycle;
+    font-style: normal;
+    font-weight: 700;
+    src: url(/cf-fonts/s/news-cycle/5.0.18/latin/700/normal.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: News Cycle;
+    font-style: normal;
+    font-weight: 700;
+    src: url(/cf-fonts/s/news-cycle/5.0.18/latin-ext/700/normal.woff2);
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-display: swap;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        max-width: 500px;
+    }
+
+    .form-group>div {
+        flex: 1 1 0 0 100%;
+    }
+
+    .footer {
+        width: auto;
+        font-size: 12px;
+        position: absolute;
+        background-color: #1e1e1e;
+        padding: 10px;
+        left: 0;
+        right: 0;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        color: #eee;
+        padding: 0em 3em;
+        background: none;
+        border-radius: 8px;
+        border: 1px solid #E32934;
+        letter-spacing: 0.20em;
+        line-height: 4em;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1em;
+        text-shadow: rgba(0, 0, 0, 0.3) 0.1em 0.1em 0.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo_img {
+        max-width: 120px;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meu tamanho</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="cordova.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="components/convert.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img class="logo_img" src="img/img_logo.png" alt="Jordan">
+        <h1 class="title news-cycle-bold">MEU TAMANHO IDEAL</h1>
+        <form>
+            <!-- Seções superiores com ID pais 1 e 2 -->
+            <div class="form-group">
+                <div>
+                    <label for="pais1"></label>
+                    <select id="pais1" onchange="updateSizes('pais1', 'ize1');">
+                        <option selected>PAÍS</option>
+                        <option value="BR">Brasil</option>
+                        <option value="US_M">Americano Masculino</option>
+                        <option value="US_F">Americano Feminino</option>
+                        <option value="EUR">Europa</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="pais2"></label>
+                    <select id="pais2" onchange="updateSizes('pais2', 'ize2');">
+                        <option selected>PAÍS</option>
+                        <option value="BR">Brasil</option>
+                        <option value="US_M">Americano Masculino</option>
+                        <option value="US_F">Americano Feminino</option>
+                        <option value="EUR">Europa</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Seções inferiores com nome de tamanhos 1 e 2 -->
+            <div class="form-group">
+                <div>
+                    <label for="size1"></label>
+                    <select id="ize1">
+                        <option selected>TAMANHO</option>
+                        <!-- Opções preenchidas dinamicamente -->
+                    </select>
+                </div>
+                <div>
+                    <label for="size2"></label>
+                    <select id="ize2">
+                        <option selected>TAMANHO</option>
+                        <!-- Opções preenchidas dinamicamente -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Botão de limpar -->
+            <button id="clear-button">Limpar</button>
+        </form>
+    </div>
+
+    <!-- Adicionado footer -->
+    <div class="footer">
+        <!-- <a href="https://github.com/AllvesMatteus" rel="external" class="github">Allves Matteus</a> -->
+        <p>&copy; 2024 Meu Tamanho Ideal. Desenvolvido por <a href="https://github.com/AllvesMatteus" target="_system"
+                class="github">Allves Matteus</a></p>
+    </div>
+</body>
+
+</html>
