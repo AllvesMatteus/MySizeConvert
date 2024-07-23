@@ -186,7 +186,7 @@ button:hover {
 
     .footer {
         width: auto;
-        font-size: 12px;
+        font-size: 10px;
         position: absolute;
         background-color: #1e1e1e;
         padding: 10px;
@@ -194,26 +194,45 @@ button:hover {
         right: 0;
     }
 
+    .footer p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer p a.github {
+        display: block;
+    }
+
+
     select {
         width: 100%;
-        padding: 10px;
+        padding: 0.5em 6%;
         font-size: 16px;
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 18px;
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: right;
+        text-transform: uppercase;
+        display: block;
+    }
+
+    option {
+        background-color: #2e2e2e;
+        color: #ffffff;
     }
 
     button {
         color: #eee;
         padding: 0em 3em;
         background: none;
-        border-radius: 8px;
-        border: 1px solid #E32934;
-        letter-spacing: 0.20em;
         line-height: 4em;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 1em;
-        text-shadow: rgba(0, 0, 0, 0.3) 0.1em 0.1em 0.2em;
+        font-size: 13px;
     }
+
 }
 
 @media (max-width: 480px) {
