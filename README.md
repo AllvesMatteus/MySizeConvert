@@ -33,4 +33,4 @@ VERSION
 - 1.0.0
 
 
-Copyright (c) 2024 Phalune.
+Copyright (c) 2024 AllvesMatteus.
