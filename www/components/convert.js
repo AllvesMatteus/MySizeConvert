@@ -103,7 +103,7 @@ function updateSizes(paisSelectId, sizeSelectId) {
     sizeSelect.addEventListener('change', function() {
         var selectedSize = sizeSelect.value;
         var correspondingSize = sizeMap[pais][selectedSize];
-        var otherSizeSelectId = sizeSelectId === 'ize1' ? 'ize2' : 'ize1';
+        var otherSizeSelectId = sizeSelectId === 'size1_select' ? 'size2_select' : 'size1_select';
         document.getElementById(otherSizeSelectId).value = correspondingSize;
     });
 }
@@ -119,6 +119,6 @@ function addOptions(selectElement, optionsArray) {
 document.getElementById('clear-button').addEventListener('click', function() {
     var selects = document.querySelectorAll('select');
     selects.forEach(function(select) {
-        select.value = 'elected';
+        select.value = 'selected_value';
     });
 });
