@@ -1,124 +1,81 @@
 var sizeMap = {
-    //Brasil para Americano Masculino
-    'BR': {
-        '33': '3,5',
-        '34': '4,5',
-        '35': '5',
-        '36': '6',
-        '37': '7',
-        '38': '7,5',
-        '39': '8',
-        '40': '8,5',
-        '41': '9',
-        '42': '10,5',
-        '43': '11,5',
-        '44': '12,5',
-        '46': '14'
-    },
-    //Americano Masculino para Brasil
-    'US_M': {
-        '3,5': '33',
-        '4,5': '34',
-        '5': '35',
-        '6': '36',
-        '7': '37',
-        '7,5': '38',
-        '8': '39',
-        '8,5': '40',
-        '9': '41',
-        '10,5': '42',
-        '11,5': '43',
-        '12,5': '44',
-        '14': '46'
-    },
-    //Americano Feminino para Brasil
-    'US_F': {
-        '5': '33',
-        '6': '34',
-        '6,5': '35',
-        '7,5': '36',
-        '8,5': '37',
-        '9': '38',
-        '9,5': '39',
-        '10': '40',
-        '10,5': '41',
-        '12': '42',
-        '13': '43',
-        '14': '44',
-        '15,5': '46'
-    },
-    //Americano Feminino para Americano Masculino
-    'US_F': {
-        '5': '3,5',
-        '6': '4,5',
-        '6,5': '5',
-        '7,5': '6',
-        '8,5': '7',
-        '9': '7,5',
-        '9,5': '8',
-        '10': '8,5',
-        '10,5': '9',
-        '12': '10,5',
-        '13': '11,5',
-        '14': '12,5',
-        '15,5': '14'
-    },
-    //Europeu para Brasil
-    'EUR': {
-        '35': '33',
-        '36': '34',
-        '37': '35',
-        '38': '36',
-        '39': '37',
-        '40': '38',
-        '41': '39',
-        '42': '40',
-        '43': '41',
-        '44': '42',
-        '45': '43',
-        '46,5': '44',
-        '48,5': '46'
-    }
+    'Brasil': ['33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '46'],
+    'Americano Masculino': ['5', '6', '7', '8', '9', '14', '3,5', '4,5', '7,5', '8,5', '10,5', '11,5', '12,5'],
+    'Americano Feminino': ['5', '6', '9', '10', '12', '13', '14', '6,5', '7,5', '8,5', '9,5', ' 10,5', '15,5'],
+    'Europeu': ['35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46,5', '48,5']
 };
+var paisOrigem, tamanhoOrigem, paisDestino, tamanhoDestino;
 
-function updateSizes(paisSelectId, sizeSelectId) {
-    var pais = document.getElementById(paisSelectId).value;
-    var sizeSelect = document.getElementById(sizeSelectId);
+function preencherPais(selectPais) {
+    selectPais.innerHTML = '<option value="0" selected>País</option>';
+    for (var pais of Object.keys(sizeMap)) {
+        selectPais.appendChild(new Option(pais, pais));
+    }
+}
 
-    // Limpar opções atuais
-    sizeSelect.innerHTML = '';
-
-    // Definir novas opções baseado no país selecionado
-    if (pais === 'BR') {
-        addOptions(sizeSelect, Object.keys(sizeMap[pais]));
-    } else if (pais === 'US_M') {
-        addOptions(sizeSelect, Object.keys(sizeMap[pais]));
-    } else if (pais === 'US_F') {
-        addOptions(sizeSelect, Object.keys(sizeMap[pais]));
-    } else if (pais === 'EUR') {
-        addOptions(sizeSelect, Object.keys(sizeMap[pais]));
+function paisSelecionado(selectPais) {
+    var selectTamanhos, outroPais, outroTamanho;
+    if (selectPais === paisOrigem) {
+        selectTamanhos = tamanhoOrigem;
+        outroTamanho = tamanhoDestino;
+        outroPais = paisDestino;
+    } else {
+        selectTamanhos = tamanhoDestino;
+        outroTamanho = tamanhoOrigem;
+        outroPais = paisOrigem;
     }
 
-    // Atualiza o tamanho correspondente
-    sizeSelect.addEventListener('change', function() {
-        var selectedSize = sizeSelect.value;
-        var correspondingSize = sizeMap[pais][selectedSize];
-        var otherSizeSelectId = sizeSelectId === 'size1_select' ? 'size2_select' : 'size1_select';
-        document.getElementById(otherSizeSelectId).value = correspondingSize;
-    });
+    // preenche os tamanhos deste país
+    selectTamanhos.innerHTML = '<option value="0" selected>Tamanho</option>';
+    if (selectPais.value in sizeMap) {
+        for (var tamanho of sizeMap[selectPais.value]) {
+            selectTamanhos.appendChild(new Option(tamanho, tamanho));
+        }
+    }
+    // verifica se o outro país e o outro tamanho já estão selecionados
+    if (outroPais.value != '0' && outroTamanho.value != '0') {
+        tamanhoSelecionado(outroTamanho);
+    }
 }
 
-function addOptions(selectElement, optionsArray) {
-    optionsArray.forEach(function(optionValue) {
-        var option = document.createElement('option');
-        option.value = option.textContent = optionValue;
-        selectElement.appendChild(option);
-    });
+function tamanhoSelecionado(selectTamanhos) {
+    var outroTamanho, pais, outroPais;
+    if (selectTamanhos === tamanhoOrigem) {
+        outroTamanho = tamanhoDestino;
+        pais = paisOrigem;
+        outroPais = paisDestino;
+    } else {
+        outroTamanho = tamanhoOrigem;
+        pais = paisDestino;
+        outroPais = paisOrigem;
+    }
+    if (selectTamanhos.value == '0' || pais.value == '0' || outroPais.value == '0')
+        return;
+    // encontrar posição do tamanho no país correspondente ao tamanho que foi alterado
+    var pos = sizeMap[pais.value].indexOf(selectTamanhos.value);
+    // setar a opção do outro select para a mesma posição
+    outroTamanho.selectedIndex = pos + 1; // soma 1 porque a primeira posição é a opção com o texto "Tamanho"
 }
 
-document.getElementById('clear-button').addEventListener('click', function() {
-    var selects = document.querySelectorAll('select');
-    selects.forEach(function(select) {
-        select.value = 'selected_value';
+// DOMContentLoaded: depois que a página for carregada (assim garante que os elementos já existem)
+document.addEventListener('DOMContentLoaded', function () {
+    paisOrigem = document.getElementById('paisOrigem');
+    tamanhoOrigem = document.getElementById('tamanhoOrigem');
+    paisDestino = document.getElementById('paisDestino');
+    tamanhoDestino = document.getElementById('tamanhoDestino');
+
+    preencherPais(paisOrigem);
+    preencherPais(paisDestino);
+    paisOrigem.addEventListener('change', function () {
+        paisSelecionado(paisOrigem);
+    });
+    paisDestino.addEventListener('change', function () {
+        paisSelecionado(paisDestino);
+    });
+    tamanhoOrigem.addEventListener('change', function () {
+        tamanhoSelecionado(tamanhoOrigem);
+    });
+    tamanhoDestino.addEventListener('change', function () {
+        tamanhoSelecionado(tamanhoDestino);
     });
 });
