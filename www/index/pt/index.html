@@ -4,27 +4,25 @@
 <head>
     <title>Meu tamanho</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <script src="cordova.js"></script>
-    <script src="components/loader.js"></script>
-    <script src="components/convert.js"></script>
-    <script src="components/theme.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="../../cordova.js"></script>
+    <script src="../../components/loader.js"></script>
+    <script src="../../components/convert.js"></script>
+    <script src="../../components/theme.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/png" href="../img/img-icon.png">
-    <link rel="mobile-icon" href="img/img-icon.png">
-    <link rel="stylesheet" href="components/loader.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="../../image/png" href="../img/img-icon.png">
+    <link rel="mobile-icon" href="../../img/img-icon.png">
+    <link rel="stylesheet" href="../../components/loader.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
-
 <body>
     <nav class="navbar">
-        <img src="img/img-icon.png" alt="Logo" class="navbar-logo">
+        <img src="../../img/img-icon.png" alt="Logo" class="navbar-logo">
         <div class="navbar-links">
-            <a href="index/pt/index_clothes.html">ROUPAS</a>
-            <a href="index/eng/index.html"><i class="fa-solid fa-earth-americas"></i> ENG</a>
+            <!--<a href="index.html">CALÇADOS</a>-->
+            <a href="index_clothes.html">ROUPAS</a>
+            <a href="../../index/eng/index.html"><i class="fa-solid fa-earth-americas"></i> ENG</a>
             <a href="#">
                 <label class="switch">
                     <span class="sun">
@@ -47,9 +45,10 @@
         </div>
     </nav>
     <div class="container">
-        <img class="logo_img" src="img/img-logo.png" alt="Jordan">
+        <img class="logo_img" src="../../img/img-logo.png" alt="Jordan">
         <h1 class="title news-cycle-bold">MEU TAMANHO IDEAL</h1>
         <form>
+            <!-- Seções superiores com ID paisOrigem e paisDestino -->
             <div class="form-group">
                 <div>
                     <label for="paisOrigem"></label>
@@ -86,8 +85,7 @@
         </form>
     </div>
     <div class="footer">
-        <p>&copy; 2024 Meu Tamanho Ideal. Desenvolvido por <a href="https://github.com/AllvesMatteus" target="_system"
-                class="github">Allves Matteus</a></p>
+        <p>&copy; 2024 Meu Tamanho Ideal. Desenvolvido por <a href="https://github.com/AllvesMatteus" target="_system" class="github">Allves Matteus</a></p>
     </div>
     <script>
         document.getElementById('clear-button').addEventListener('click', function () {

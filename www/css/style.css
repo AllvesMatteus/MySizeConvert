@@ -1,3 +1,176 @@
+/* Switch de  */ 
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 45.8px; /* 64px reduzido em 30% */
+  height: 23.8px; /* 34px reduzido em 30% */
+}
+
+.switch input {
+  opacity: 0; /* Torna o checkbox invisível */
+  width: 0; /* Remove a largura do checkbox */
+  height: 0; /* Remove a altura do checkbox */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC; /* Cor de fundo do switch */
+  transition: .4s; /* Transição suave */
+  border-radius: 22px; /* Bordas arredondadas */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px; /* 30px reduzido em 30% */
+  width: 21px; /* 30px reduzido em 30% */
+  border-radius: 15px; /* Bordas arredondadas do botão */
+  left: 1.4px; /* Posição inicial do botão */
+  bottom: 1.4px; /* Posição inicial do botão */
+  z-index: 2; /* Coloca o botão acima do fundo */
+  background-color: #e8e8e8; /* Cor do botão */
+  transition: .4s; /* Transição suave */
+}
+
+.sun svg {
+  position: absolute;
+  top: 4.2px; /* Posição do ícone do sol */
+  left: 25px; /* Posição do ícone do sol */
+  z-index: 1; /* Coloca o ícone do sol abaixo do botão */
+  width: 16.8px; /* 24px reduzido em 30% */
+  height: 16.8px; /* 24px reduzido em 30% */
+}
+
+.moon svg {
+  fill: #73C0FC; /* Cor do ícone da lua */
+  position: absolute;
+  top: 3.5px; /* Posição do ícone da lua */
+  left: 3.5px; /* Posição do ícone da lua */
+  z-index: 1; /* Coloca o ícone da lua abaixo do botão */
+  width: 16.8px; /* 24px reduzido em 30% */
+  height: 16.8px; /* 24px reduzido em 30% */
+}
+
+.sun svg {
+  animation: rotate 15s linear infinite; /* Animação de rotação do sol */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moon svg {
+  animation: tilt 5s linear infinite; /* Animação de inclinação da lua */
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153; /* Cor de fundo quando o switch está ativado */
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153; /* Sombra quando o switch está focado */
+}
+
+.input:checked + .slider:before {
+  transform: translateX(22px); /* Move o botão para a direita quando ativado */
+}
+
+
+/* Tema Escuro (Padrão) */
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Tema Claro */
+body.light-theme {
+    background-color: #f4f4f4;
+    color: #333333;
+}
+
+/* Ajustes para elementos específicos no tema claro */
+body.light-theme .container {
+    background: #f4f4f4;
+}
+body.light-theme .title {
+    color: #030303;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+body.light-theme form {
+    background: #e7e7e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme select {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+}
+
+body.light-theme .navbar {
+    background-color: rgb(244, 244, 244);
+}
+
+body.light-theme .navbar-links a {
+    color: #333333;
+}
+
+body.light-theme .navbar-links a:hover {
+    color: #E32934;
+}
+
+body.light-theme button {
+    color: #333333;
+    border: 1px solid #E32934;
+    text-shadow: rgba(0, 0, 0, 0.3) 0.1em 0.1em 0.2em;
+}
+
+body.light-theme button:hover {
+    color: #f4f4f4; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilização do footer no tema claro */
+body.light-theme .footer {
+    background-color: #ffffff; /* Cor de fundo do footer */
+    color: #333333; /* Cor do texto do footer */
+    border-top: 1px solid #cccccc; /* Borda superior */
+}
+
+body.light-theme .footer a.github {
+    color: #E32934; /* Cor do link no footer */
+}
+
+body.light-theme .footer a.github:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -9,7 +182,49 @@ body {
     margin: 0;
     margin-bottom: 0px;
 }
-
+.flag-icon {
+    font-size: 24px; /* Ajuste o tamanho conforme necessário */
+    margin-left: 10px; /* Espaçamento entre os ícones */
+    color: #ffffff; /* Cor do ícone */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.navbar-logo {
+    margin-left: 20px;
+    height: 40px;
+    width: auto;
+    border-radius: 50%; /* Isso fará a logo ficar completamente redonda */
+    /* ou você pode usar um valor menor para bordas levemente arredondadas */
+    /* border-radius: 10px; */
+}
+.navbar-links {
+    margin-right: 20px;
+}
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-family: 'News Cycle', sans-serif;
+}
+.navbar-links a:hover {
+    color: #E32934;
+}
 .news-cycle-regular {
     font-family: "News Cycle", sans-serif;
     font-weight: 400;
@@ -30,6 +245,7 @@ body {
     box-sizing: border-box;
     margin-bottom: 50px;
     position: relative;
+    margin-top: 0px; /* Adicione esta linha para dar espaço para a navbar */
 }
 
 form {
@@ -81,7 +297,7 @@ option {
 }
 
 .title {
-    font-size: 27px;
+    font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
     color: #eee;
@@ -173,6 +389,7 @@ button:hover {
     font-display: swap;
 }
 
+
 /* Responsividade */
 @media (max-width: 768px) {
     .container {
@@ -231,11 +448,27 @@ button:hover {
         line-height: 4em;
         font-size: 13px;
     }
-
-}
-
-@media (max-width: 480px) {
     .logo_img {
         max-width: 120px;
     }
+    .navbar {
+        padding: 15px 0;
+    }
+    
+    .navbar-logo {
+        height: 30px;
+    }
+    
+    .navbar-links a {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    
+    .container {
+        margin-top: 60px; /* Ajuste para a responsividade */
+    }
+
 }
+
+
+/* Navbar styles */
