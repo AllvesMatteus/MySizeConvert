@@ -48,6 +48,7 @@ body {
 .img-language {
     width: 25px; /* Ajuste o tamanho da imagem conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
+    margin-right: 3px; /* Espaçamento entre a imagem e o texto */
     vertical-align: middle; /* Alinha a imagem ao meio em relação ao texto */
 }
 
