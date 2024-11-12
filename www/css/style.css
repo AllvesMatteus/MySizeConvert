@@ -235,7 +235,7 @@ option {
     bottom: 0;
     right: 0;
     width: 100%;
-    background-color: #1e1e1e;
+
     padding: 10px;
     text-align: center;
     color: #ffffff;
@@ -331,7 +331,7 @@ button:hover {
         left: 0;
         right: 0;
         padding-bottom: 0;
-        background-color: none;
+        /* background-color: none; */
         margin: 0; /* Remove margens */
     }
 
