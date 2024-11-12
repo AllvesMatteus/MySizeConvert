@@ -99,8 +99,8 @@ body.light-theme .title {
 }
 
 body.light-theme form {
-    background: #e0e0e0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #f0efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 body.light-theme select {
@@ -204,7 +204,7 @@ select {
     color: #ffffff;
     text-align: center;
     text-transform: uppercase;
-    box-sizing: border-box; /* inclui padding e borda no cálculo do tamanho */
+    box-sizing: border-box;
 }
 
 option {
@@ -231,7 +231,7 @@ option {
 }
 
 .footer {
-    position: absolute; /* Se você quiser que o footer fique fixo no fundo, mantenha esta propriedade */
+    position: absolute; 
     bottom: 0;
     right: 0;
     width: 100%;
@@ -241,7 +241,7 @@ option {
     color: #ffffff;
     font-size: 15px;
     margin: 0; /* Remove margens */
-    height: auto; /* Ajusta a altura automaticamente */
+    height: auto 100%; /* Ajusta a altura automaticamente */
     overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse */
 }
 
@@ -331,6 +331,7 @@ button:hover {
         padding: 10px;
         left: 0;
         right: 0;
+        padding-bottom: 0;
         margin: 0; /* Remove margens */
     }
 
@@ -391,7 +392,6 @@ button:hover {
 
     .container {
         margin-top: 60px;
-        /* Ajuste para a responsividade */
     }
 
 }
