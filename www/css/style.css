@@ -7,6 +7,7 @@ body {
     font-family: 'News Cycle', 'Arial', sans-serif;
     color: #ffffff;
     margin: 0;
+    margin-bottom: 0px;
 }
 
 .flag-icon {
@@ -230,18 +231,16 @@ option {
 }
 
 .footer {
-    position: absolute; 
+    position: fixed; /* Fixa o footer na parte inferior da janela */
     bottom: 0;
+    left: 0;
     right: 0;
-    width: 100%;
     background-color: #1e1e1e;
     padding: 10px;
     text-align: center;
     color: #ffffff;
     font-size: 15px;
     margin: 0; /* Remove margens */
-    height: auto 100%; /* Ajusta a altura automaticamente */
-    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse */
 }
 
 .github {
@@ -327,7 +326,6 @@ button:hover {
         font-size: 10px;
         position: absolute; /* Mantém a posição absoluta */
         background-color: #1e1e1e;
-        margin-bottom: 0px;
         padding: 10px;
         left: 0;
         right: 0;
