@@ -327,6 +327,7 @@ button:hover {
         font-size: 10px;
         position: absolute; /* Mantém a posição absoluta */
         background-color: #1e1e1e;
+        margin-bottom: 0px;
         padding: 10px;
         left: 0;
         right: 0;
