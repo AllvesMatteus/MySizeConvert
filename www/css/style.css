@@ -327,7 +327,6 @@ button:hover {
         width: auto; /* Ajusta a largura para dispositivos menores */
         font-size: 10px;
         position: absolute; /* Mantém a posição absoluta */
-        background-color: #1e1e1e;
         padding: 10px;
         left: 0;
         right: 0;
