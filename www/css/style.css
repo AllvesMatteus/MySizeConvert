@@ -82,87 +82,20 @@ body {
     font-style: normal;
 }
 
-/* TEMA CLARO */
-body.light-theme {
-    background-color: #e4e4e4;
-    color: #333333;
-}
-
-body.light-theme .container {
-    background: #f4f4f400;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-body.light-theme .title {
-    color: #030303;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-body.light-theme form {
-    background: #f0efef;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-
-body.light-theme select {
-    background-color: #ffffff;
-    color: #333333;
-    border: 1px solid #cccccc;
-}
-body.light-theme option {
-    background-color: #ffffff;
-    color: #333333;
-}
-
-body.light-theme .navbar {
-    background-color: #f4f4f400;
-}
-
-body.light-theme .navbar-links a {
-    color: #333333;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-body.light-theme .navbar-links a:hover {
-    color: #E32934;
-}
-
-body.light-theme button {
-    background-color:#E32934;
-    color: #f4f4f4;
-    border: 1px solid #E32934;
-    text-shadow: rgba(0, 0, 0, 0.1) 0.1em 0.1em 0.2em;
-}
-
-body.light-theme button:hover {
-    color: #f4f4f4;
-    background-color: #640007;
-    border: 1px solid #640007;
-}
-
-body.light-theme .footer {
-    background-color: #ffffff;
-    color: #333333;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid #cccccc;
-}
-
-body.light-theme .footer a.github {
-    color: #E32934; /* Cor do link no footer */
-}
-
-body.light-theme .footer a.github:hover {
-    color: #640007;
-}
-
 .container {
     width: 100%;
     max-width: 600px;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    margin-bottom: 50px;
     position: relative;
-    margin-top: 0px; /* Adicione esta linha para dar espaço para a navbar */
+
+    
+    min-height: 100vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
+    display: flex;
+    flex-direction: column; /* Organiza os filhos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */ 
 }
 
 form {
@@ -313,8 +246,16 @@ button:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
+
     .container {
         max-width: 500px;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+    
+        min-height: 85vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
     }
 
     .form-group>div {
@@ -385,6 +326,78 @@ button:hover {
         margin-top: 60px;
     }
 
+}
+
+/* TEMA CLARO */
+body.light-theme {
+    background-color: #e4e4e4;
+    color: #333333;
+}
+
+body.light-theme .container {
+    background: #f4f4f400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .title {
+    color: #030303;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme form {
+    background: #f0efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+body.light-theme select {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+}
+body.light-theme option {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+body.light-theme .navbar {
+    background-color: #f4f4f400;
+}
+
+body.light-theme .navbar-links a {
+    color: #333333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .navbar-links a:hover {
+    color: #E32934;
+}
+
+body.light-theme button {
+    background-color:#E32934;
+    color: #f4f4f4;
+    border: 1px solid #E32934;
+    text-shadow: rgba(0, 0, 0, 0.1) 0.1em 0.1em 0.2em;
+}
+
+body.light-theme button:hover {
+    color: #f4f4f4;
+    background-color: #640007;
+    border: 1px solid #640007;
+}
+
+body.light-theme .footer {
+    background-color: #ffffff;
+    color: #333333;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #cccccc;
+}
+
+body.light-theme .footer a.github {
+    color: #E32934; /* Cor do link no footer */
+}
+
+body.light-theme .footer a.github:hover {
+    color: #640007;
 }
 
 /* Switch de Tema Dark e light - Uiverse.io  andrew-demchenk0 */
