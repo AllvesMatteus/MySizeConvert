@@ -375,18 +375,18 @@ body.light-theme button:hover {
     border: 1px solid #640007;
 }
 
-body.light-theme .footer {
-    background-color: #ffffff;
+body.light-theme footer {
+    background-color: #eeeeee;
     color: #333333;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #cccccc;
 }
 
-body.light-theme .footer a.github {
+body.light-theme footer a.github {
     color: #E32934; /* Cor do link no footer */
 }
 
-body.light-theme .footer a.github:hover {
+body.light-theme footer a.github:hover {
     color: #640007;
 }
 
