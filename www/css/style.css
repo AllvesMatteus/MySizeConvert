@@ -244,12 +244,7 @@ button:hover {
 @media (max-width: 768px) {
 
     .container {
-        width: 100%;
         max-width: 500px;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-        margin: 0 auto; /* Adicionado para centralizar */
     }
 
     .form-group>div {
