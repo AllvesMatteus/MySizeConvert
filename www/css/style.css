@@ -83,19 +83,15 @@ body {
 }
 
 .container {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-
-    
-    min-height: 100vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
-    display: flex;
-    flex-direction: column; /* Organiza os filhos em coluna */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */ 
+    position: absolute; /* Permite que o container seja posicionado em relação ao body */
+    top: 50%; /* Move o container para 50% da altura do body */
+    left: 50%; /* Move o container para 50% da largura do body */
+    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    width: 100%; /* Largura do container */
+    max-width: 600px; /* Largura máxima do container */
+    text-align: center; /* Centraliza o texto dentro do container */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
 }
 
 form {
@@ -248,14 +244,12 @@ button:hover {
 @media (max-width: 768px) {
 
     .container {
-        max-width: 500px;
         width: 100%;
+        max-width: 500px;
         text-align: center;
         padding: 20px;
         box-sizing: border-box;
-        position: relative;
-    
-        min-height: 70vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
+        margin: 0 auto; /* Adicionado para centralizar */
     }
 
     .form-group>div {
