@@ -245,6 +245,7 @@ button:hover {
 
     .container {
         max-width: 500px;
+        top: 30%;
     }
 
     .form-group>div {
