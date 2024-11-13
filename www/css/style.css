@@ -255,7 +255,7 @@ button:hover {
         box-sizing: border-box;
         position: relative;
     
-        min-height: 85vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
+        min-height: 70vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
     }
 
     .form-group>div {
